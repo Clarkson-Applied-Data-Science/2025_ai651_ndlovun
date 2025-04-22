@@ -132,6 +132,11 @@ SVM perfomed best upon initial evaluation
 Our model for this data is:
 ![image](https://github.com/user-attachments/assets/ba340fc3-bda5-4c4c-ab1e-246b34a34c9d)
 
+### Synthesized Prediction Example
+
+![Screenshot 2025-04-22 015746](https://github.com/user-attachments/assets/b96ceaed-aa2d-427b-8aaa-537ad2a404d8)
+
+
 
 # Future Work
 -Experiment with neural networks for capturing complex interactions
