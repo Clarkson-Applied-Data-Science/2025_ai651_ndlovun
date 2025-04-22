@@ -10,8 +10,7 @@ To analyze the factors that influence a soccer player's market value using FIFA 
 1.	Explore the relationships between a player’s key attributes and their Market Value.
 2.	Using supervised learnin techniques to develop predictive models to estimate player wages and overall ratings based on certain player attributes (e.g. age, position, potential, and skill moves). 
 3.	Validate the models by assessing their performance and selecting the best-performing model based on evaluation metrics (like R-squared, Mean Absolute Error (MAE), and Mean Squared Error (MSE)).
-4.	Provide actionable insights and recommendations that can assist soccer clubs in making informed decisions about player recruitment, salary negotiations, and contract offers.
-
+   
 ## Data Source
 Source of the Data: https://www.kaggle.com/datasets/bryanb/fifa-player-stats-database?select=FIFA22_official_data.csv   
 Year: 2022
@@ -20,10 +19,7 @@ Structure:  1000R * 11 C
 16 089 Unique players represented
 
 ## Variables
-Train a regression model on player attributes (independent variables) to predict wages (dependent variables).
-Use feature engineering to extract meaningful insights (e.g., impact of position, league, skill rating).
-Validate against real-world transfer market data (e.g., Transfermarkt, soccer clubs financial reports).
-
+Train a regression model on player attributes (independent variables) to predict market value (dependent variables).
 
 ### Justification of data choice and period
 While more recent data might offer some advantages, the 2022 dataset proved to provide a strong foundation for achieving the project's objectives of exploring relationships, developing predictive models, and providing actionable insights for football because of the vast attributes it contained.
@@ -65,12 +61,20 @@ Most players cluster at the lower end of value/wage
 ![image](https://github.com/user-attachments/assets/1f003b7c-ed7a-4fb4-af8c-23afbfe24190)
 
 
+## Correlation 
 
+### Correlation Matrix
 ![Corr-Matrx](https://github.com/user-attachments/assets/0b65f0a3-159a-41b4-8554-8c284fa4b296)
 
 -Positioning is a key feature in the dataset and shows a strong correlation with various other attributes such as Finishing, Dribbling, and Longshots.
 -Agility is another important factor, which is closely linked to Balance, Sprint Speed, and Acceleration. 
 
+### Correlation of top 10 attributes with Market Value
+![image](https://github.com/user-attachments/assets/28db9e1e-a886-455e-87d1-3d5928a6d452)
+
+
+
+### Analysing top Players by Strength
 ![image](https://github.com/user-attachments/assets/6f2660bd-a840-4a1e-984f-4301aaa7f542)
 
 ![radar](https://github.com/user-attachments/assets/87ebb238-3f89-4247-9ee4-64162f2416ff)
