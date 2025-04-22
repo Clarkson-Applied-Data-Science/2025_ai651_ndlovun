@@ -1,13 +1,13 @@
-# Predicting Soccer Player Wages Using Machine Learning Models
+# Predicting Soccer Player Market Value Using Machine Learning Models
 
 # Introduction
-The current subjective methods for determining soccer player value and wages often lead to inefficienct player recruitment, inequitable salary negotiations, and suboptimal contract offers for soccer players, hence the need to bridge the gap.
+The current subjective methods for determining soccer player value lead to inefficienct player recruitment, inequitable salary negotiations, and suboptimal contract offers for soccer players, hence the need to bridge the gap.
 
 ### Overall Goal
-To analyze the factors that influence a soccer player's value and wages using FIFA 2022 data and develop predictive models to estimate these attributes based on key player characteristics based on the top 10 rated players.
+To analyze the factors that influence a soccer player's market value using FIFA 2022 data and develop predictive models to estimate these attributes based on key player characteristics based on the top 10 rated players.
 
 ### Objectives
-1.	Explore the relationships between a player’s key attributes and their Wages.
+1.	Explore the relationships between a player’s key attributes and their Market Value.
 2.	Using supervised learnin techniques to develop predictive models to estimate player wages and overall ratings based on certain player attributes (e.g. age, position, potential, and skill moves). 
 3.	Validate the models by assessing their performance and selecting the best-performing model based on evaluation metrics (like R-squared, Mean Absolute Error (MAE), and Mean Squared Error (MSE)).
 4.	Provide actionable insights and recommendations that can assist soccer clubs in making informed decisions about player recruitment, salary negotiations, and contract offers.
@@ -76,8 +76,29 @@ Feature Engineering > One-Hot Encoding: Convert categorical variables like posit
 
 
 
-# Alternative plan if proposed prediction does not work out
-Source and use data for 1 big league for this prediction and recommend it to similar leagues.
+# Model Training
+![image](https://github.com/user-attachments/assets/95cdf421-44a2-4533-9ee9-561c5ff47288)
+SVM perfomed best upon evaluation
+
+
+## Residual Plots
+-We perform residual analysis to establish how well our model fits the data by analyzing the residuals as below:
+![image](https://github.com/user-attachments/assets/f1612a92-10e7-41a5-a076-66279eda7ab0)
+
+-We observe that Random Forest and XGBoost have the best performing models 
+
+## Model Selection
+-Since the MSE for Random Forest performed better, we proceed with selecting it as our best model.
+![image](https://github.com/user-attachments/assets/a1d3d5ca-d601-45cf-be61-d2cb516c6289)
+
+-We establish which variable is most important as below:
+![image](https://github.com/user-attachments/assets/0dffd696-851e-4c00-8f6d-d6cdc2eb3310)
+
+
+
+
+
+
 
 
 
