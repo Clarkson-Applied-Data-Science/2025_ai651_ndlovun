@@ -15,7 +15,7 @@ To analyze the factors that influence a soccer player's market value using FIFA 
 ## Data Source
 Source of the Data: https://www.kaggle.com/datasets/bryanb/fifa-player-stats-database?select=FIFA22_official_data.csv   
 Year: 2022
-Structure: 16 710R * 65C
+Structure:  1000R * 11 C
 168 Nationalities represented
 16 089 Unique players represented
 
