@@ -39,8 +39,9 @@ Data Cleaning > Data Pre-Processing > Exploratory Analysis > Feature Engineering
 Assigning age-group for each age.
 
 ### Data Pre-Processing
-One Hot-encoding of categorical variables (Nationality, Club, and Position).
-Normalizing data as below:
+-One Hot-encoding of categorical variables (Nationality, Club, and Position).
+-Normalizing data as below:
+
 ![image](https://github.com/user-attachments/assets/c86beea0-4e8f-4e3c-81b7-d2bcb3e4389c)
 
 ![image](https://github.com/user-attachments/assets/6ab2e3c0-366b-4d5a-b7d0-8905462034c9)
