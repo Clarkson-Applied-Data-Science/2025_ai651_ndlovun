@@ -60,6 +60,8 @@ Most players cluster at the lower end of value/wage
 
 ![image](https://github.com/user-attachments/assets/1f003b7c-ed7a-4fb4-af8c-23afbfe24190)
 
+![image](https://github.com/user-attachments/assets/6f2660bd-a840-4a1e-984f-4301aaa7f542)
+
 
 ## Correlation 
 
@@ -75,8 +77,6 @@ Most players cluster at the lower end of value/wage
 
 
 ### Analysing top Players by Strength
-![image](https://github.com/user-attachments/assets/6f2660bd-a840-4a1e-984f-4301aaa7f542)
-
 ![radar](https://github.com/user-attachments/assets/87ebb238-3f89-4247-9ee4-64162f2416ff)
 
 -The radar chart visually highlights the strengths and weaknesses of each player based on their attributes.
