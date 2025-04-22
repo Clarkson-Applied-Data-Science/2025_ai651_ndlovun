@@ -1,4 +1,4 @@
-# Predicting Soccer Player Market Value Using Machine Learning Models
+# Predicting EPL Soccer Player Market Value Using Machine Learning Models
 
 # Introduction
 The current subjective methods for determining soccer player value lead to inefficienct player recruitment, inequitable salary negotiations, and suboptimal contract offers for soccer players, hence the need to bridge the gap.
@@ -33,22 +33,32 @@ While more recent data might offer some advantages, the 2022 dataset proved to p
 Data Cleaning > Data Pre-Processing > Exploratory Analysis > Feature Engineering (PCA) > Model Training and Building > Model Evaluation > Model Selection
 
 ### Data Cleaning
+![image](https://github.com/user-attachments/assets/ecc1da78-0adb-403e-b6ea-cd5c8bf371f1)
+
 
 ### Data Pre-Processing
+One Hot-encoding of categorical variables (Nationality, Club, and Position).
+Assigning age-group for each age.
+Normalizing data as below:
+![image](https://github.com/user-attachments/assets/c86beea0-4e8f-4e3c-81b7-d2bcb3e4389c)
+
+![image](https://github.com/user-attachments/assets/6ab2e3c0-366b-4d5a-b7d0-8905462034c9)
+
 
 ### Exploratory Analysis
-![Age Dist](https://github.com/user-attachments/assets/cdd8faea-c15a-4cd5-becf-30dc86db67e2)
 
--The right-skewedness of the distribution shows that younger individuals dominate the dataset, while older ages are less frequent.
--The median age is 25 years
+![image](https://github.com/user-attachments/assets/57683155-3951-4e6f-bf56-02e8d388d6c9)
 
+Wages range from a few hundred € to over €500K/week
+Most players cluster at the lower end of value/wage
 
+![image](https://github.com/user-attachments/assets/fd339684-3131-450d-adc4-5a8326869949)
 
-![Main Effects Plot](https://github.com/user-attachments/assets/5a301ba2-7ae7-46b1-aee4-215b82a9a473)
+![image](https://github.com/user-attachments/assets/19cdc0cf-faa4-4d13-882d-1d864538c5b4)
 
--There is a significant spike for the CF (Center Forward) position, with wages exceeding €50,000, making it an outlier.
--The RES (Reserve) position has a notably low mean wage, likely because reserves are typically lower-paid players.
--Goalkeepers (GK) and defenders (CB, RCB, LCB, etc.) have more stable and moderate wages.
+![image](https://github.com/user-attachments/assets/06084b62-c40a-485e-bc48-a52c3e22f8bd)
+
+![image](https://github.com/user-attachments/assets/1f003b7c-ed7a-4fb4-af8c-23afbfe24190)
 
 
 
@@ -57,8 +67,7 @@ Data Cleaning > Data Pre-Processing > Exploratory Analysis > Feature Engineering
 -Positioning is a key feature in the dataset and shows a strong correlation with various other attributes such as Finishing, Dribbling, and Longshots.
 -Agility is another important factor, which is closely linked to Balance, Sprint Speed, and Acceleration. 
 
-
-
+![image](https://github.com/user-attachments/assets/6f2660bd-a840-4a1e-984f-4301aaa7f542)
 
 ![radar](https://github.com/user-attachments/assets/87ebb238-3f89-4247-9ee4-64162f2416ff)
 
@@ -75,10 +84,24 @@ Feature Engineering > One-Hot Encoding: Convert categorical variables like posit
 -Model Training and Building > Model Evaluation > Model Selection
 
 
+# Principal Component Analysis
+![image](https://github.com/user-attachments/assets/bc7936d7-5406-4669-8949-eb71e76debec)
+
+![image](https://github.com/user-attachments/assets/0ff31dd4-cf76-45f4-8ec9-76a64aae5c02)
+
+![image](https://github.com/user-attachments/assets/5fc27a27-de35-4d50-bb50-7c1bb8341569)
+
+
+# Clustering
+
+![image](https://github.com/user-attachments/assets/10ec0fb4-ecd7-4762-a912-b7b02d859512)
+
+![image](https://github.com/user-attachments/assets/ebbe0a7e-f2de-4523-9a1f-9a31007a927f)
+
 
 # Model Training
 ![image](https://github.com/user-attachments/assets/95cdf421-44a2-4533-9ee9-561c5ff47288)
-SVM perfomed best upon evaluation
+SVM perfomed best upon initial evaluation
 
 
 ## Residual Plots
@@ -89,10 +112,36 @@ SVM perfomed best upon evaluation
 
 ## Model Selection
 -Since the MSE for Random Forest performed better, we proceed with selecting it as our best model.
-![image](https://github.com/user-attachments/assets/a1d3d5ca-d601-45cf-be61-d2cb516c6289)
 
 -We establish which variable is most important as below:
 ![image](https://github.com/user-attachments/assets/0dffd696-851e-4c00-8f6d-d6cdc2eb3310)
+
+
+Our model for this data is:
+![image](https://github.com/user-attachments/assets/ba340fc3-bda5-4c4c-ab1e-246b34a34c9d)
+
+
+# Future Work
+-Experiment with neural networks for capturing complex interactions
+
+-Include temporal evolution of player ratings from multi-year data
+
+-Source and use a verified dataset
+
+
+# Conclusion
+
+-The models accurately predicted player market value with Random Forest performing best.
+
+-Features such as Best Overall Rating, Overall Rating and  Potential were found to be the strongest predictors of market value.
+
+-The modeling framework and feature importance analysis can be adapted for real-world scouting and valuation scenarios for soccer players.
+
+
+
+
+
+
 
 
 
