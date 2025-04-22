@@ -37,6 +37,7 @@ Data Cleaning > Data Pre-Processing > Exploratory Analysis > Feature Engineering
 
 ### Feature Engineering
 Assigning age-group for each age.
+Calculating age-to-potential ratio to identify undervalued young players
 
 ### Data Pre-Processing
 -One Hot-encoding of categorical variables (Nationality, Club, and Position).
