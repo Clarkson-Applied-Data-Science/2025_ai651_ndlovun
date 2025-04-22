@@ -118,8 +118,12 @@ SVM perfomed best upon initial evaluation
 
 -We observe that Random Forest and XGBoost have the best performing models 
 
+## Hyperparameter Selection
+-A K-Fold Cross-Validation approach (K=5) was used to ensure robust model evaluation and minimize overfitting.
+-Additionally, feature importance analysis was conducted to identify the most influential predictors of Wage and Value.
+
 ## Model Selection
--Since the MSE for Random Forest performed better, we proceed with selecting it as our best model.
+-Since the MSE for Random Forest performed better, we proceeded with selecting it as our best model.
 
 -We establish which variable is most important as below:
 ![image](https://github.com/user-attachments/assets/0dffd696-851e-4c00-8f6d-d6cdc2eb3310)
