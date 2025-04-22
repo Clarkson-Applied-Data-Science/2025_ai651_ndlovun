@@ -98,6 +98,16 @@ Most players cluster at the lower end of value/wage
 
 
 # Model Training
+
+## Train/Test Split Criteria
+
+-80% of the data was used for training the model
+
+-20% of the data was used for testing the model
+
+-The dataset was divided into 80/20 train-test split using stratified sampling to maintain the distribution of the target variable (Value). This approach ensured that the training set was large enough to learn the underlying patterns, while the test set provided an unbiased evaluation of the model’s performance.
+
+
 ![image](https://github.com/user-attachments/assets/95cdf421-44a2-4533-9ee9-561c5ff47288)
 SVM perfomed best upon initial evaluation
 
