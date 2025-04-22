@@ -78,12 +78,6 @@ Most players cluster at the lower end of value/wage
 -Oblak, as a goalkeeper, has significantly lower ratings in these outfield skills, reinforcing his specialized role.
 
 
-# Going Forward
-Feature Engineering > One-Hot Encoding: Convert categorical variables like position into numerical form.Log Transformation: Apply to skewed features like wages to handle extreme outliers.
-
--Model Training and Building > Model Evaluation > Model Selection
-
-
 # Principal Component Analysis
 ![image](https://github.com/user-attachments/assets/bc7936d7-5406-4669-8949-eb71e76debec)
 
