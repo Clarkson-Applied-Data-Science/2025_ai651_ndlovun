@@ -72,7 +72,7 @@ Wage is most strongly influenced by technical and attacking attributes, with phy
 
 # Principal Component Analysis
 ![output](https://github.com/user-attachments/assets/ead8f199-88b0-4069-886e-40b689bbc4b6)
-Principal component 2
+The scree plot justifies focusing on the first two principal components for interpretation and further modeling, as they capture the vast majority of the variance in your soccer player attributes dataset
 
 ![biplot](https://github.com/user-attachments/assets/26d5c882-3fa3-4ab5-8213-9bcc11bafe6f)
 This biplot reveals that most player variation can be summarized by two main axes: one dominated by technical and value-related skills, and another by physical attributes like speed. The clustering of technical skills shows they often co-occur, while physical traits like speed can set players apart in unique ways. This kind of analysis helps identify which attributes are most influential in distinguishing player profiles in your dataset.
