@@ -52,8 +52,7 @@ Subs are the most dorminant player positions.
 
 ![image](https://github.com/user-attachments/assets/b6617c70-c89c-4bab-9554-a682dc8ccfcb)
 
-From the top 10 valued player positions, 
-
+Player wages are highly variable within each position, with a small number of players earning much more than the rest. While median wages are relatively similar, attacking and goalkeeping roles show greater wage variability and more high earners. This reflects the market's premium for standout performers in these positions.
 
 ## Correlation 
 
