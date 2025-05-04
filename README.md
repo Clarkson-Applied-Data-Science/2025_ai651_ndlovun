@@ -1,22 +1,23 @@
-# Predicting EPL Soccer Player Market Value Using Machine Learning Models
+# Predicting EPL Soccer Player Wages Using Machine Learning Models
 
 # Introduction
-The current subjective methods for determining soccer player value lead to inefficienct player recruitment, inequitable salary negotiations, and suboptimal contract offers for soccer players, hence the need to bridge the gap.
+Player wage determination in soccer involves factors like performance metrics, marketability, and positional demand. This project leverages FIFA 2022 player data to build a predictive model for wages, providing insights into key attributes influencing earnings.
 
 ### Overall Goal
-To analyze the factors that influence a soccer player's market value using FIFA 2022 data and develop predictive models to estimate these attributes based on key player characteristics based on the top 10 rated players.
+To analyze the factors that influence a soccer player's wages using FIFA 2022 data.
 
 ### Objectives
-1.	Explore the relationships between a player’s key attributes and their Market Value.
-2.	Using supervised learnin techniques to develop predictive models to estimate player wages and overall ratings based on certain player attributes (e.g. age, position, potential, and skill moves). 
-3.	Validate the models by assessing their performance and selecting the best-performing model based on evaluation metrics (like R-squared, Mean Absolute Error (MAE), and Mean Squared Error (MSE)).
+1. Identify attributes correlated with wage.
+2. Develop machine learning models to predict wages.
+3. Evaluate model performance and optimize hyperparameters.
+
+### Study Significance
+This study offers a framework for objective wage valuation, aiding stakeholders in financial planning and talent assessment.
    
 ## Data Source
 Source of the Data: https://www.kaggle.com/datasets/bryanb/fifa-player-stats-database?select=FIFA22_official_data.csv   
 Year: 2022
 Structure:  1000R * 11 C
-168 Nationalities represented
-16 089 Unique players represented
 
 ## Variables
 Train a regression model on player attributes (independent variables) to predict market value (dependent variables).
@@ -28,21 +29,15 @@ While more recent data might offer some advantages, the 2022 dataset proved to p
 ## Project Plan
 Data Cleaning > Data Pre-Processing > Exploratory Analysis > Feature Engineering (PCA) > Model Training and Building > Model Evaluation > Model Selection
 
-### Data Cleaning
-![image](https://github.com/user-attachments/assets/ecc1da78-0adb-403e-b6ea-cd5c8bf371f1)
+### Data Cleaning and Pre-Processing
+Removed columns with >50% missing values (e.g., DefensiveAwareness, GKReflexes).
+Imputed remaining missing values using mean/mode.
+Standardized numeric features 
+One-hot encoded categorical variables.
 
 ### Feature Engineering
--Assigning age-group for each age.
-
--Calculating age-to-potential ratio to identify undervalued young players
-
-### Data Pre-Processing
--One Hot-encoding of categorical variables (Nationality, Club, and Position).
--Normalizing data as below:
-
-![image](https://github.com/user-attachments/assets/c86beea0-4e8f-4e3c-81b7-d2bcb3e4389c)
-
-![image](https://github.com/user-attachments/assets/6ab2e3c0-366b-4d5a-b7d0-8905462034c9)
+Top Attributes: Positioning, Reactions, BallControl, and Values were retained based on EDA correlations.
+Log Transformation: Applied to Values and Wage to address skewness.
 
 
 ### Exploratory Analysis
@@ -66,14 +61,6 @@ Most players cluster at the lower end of value/wage
 ## Correlation 
 
 ### Correlation Matrix
-![Corr-Matrx](https://github.com/user-attachments/assets/0b65f0a3-159a-41b4-8554-8c284fa4b296)
-
--Positioning is a key feature in the dataset and shows a strong correlation with various other attributes such as Finishing, Dribbling, and Longshots.
--Agility is another important factor, which is closely linked to Balance, Sprint Speed, and Acceleration. 
-
-### Correlation of top 10 attributes with Market Value
-![image](https://github.com/user-attachments/assets/28db9e1e-a886-455e-87d1-3d5928a6d452)
-
 
 
 ### Analysing top Players by Strength
