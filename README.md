@@ -42,26 +42,24 @@ Log Transformation: Applied to Values and Wage to address skewness.
 
 ### Exploratory Analysis
 
-![image](https://github.com/user-attachments/assets/57683155-3951-4e6f-bf56-02e8d388d6c9)
+![age distribution](https://github.com/user-attachments/assets/0b2699dc-fdeb-427f-a0a5-7497634ce56f)
 
-Wages range from a few hundred € to over €500K/week
-Most players cluster at the lower end of value/wage
+Aging players (>30) are fewer, especially those above 35 years old. This age pattern is consistent with expectations in professional football, where the physical prime and club strategies often center around youth development and performance potential.
 
-![image](https://github.com/user-attachments/assets/fd339684-3131-450d-adc4-5a8326869949)
+![top 10 player positions](https://github.com/user-attachments/assets/e3c8e7b1-3b40-4fc5-af61-9f37d68dfca6)
 
-![image](https://github.com/user-attachments/assets/19cdc0cf-faa4-4d13-882d-1d864538c5b4)
+Subs are the most dorminant player positions.
 
-![image](https://github.com/user-attachments/assets/06084b62-c40a-485e-bc48-a52c3e22f8bd)
+![image](https://github.com/user-attachments/assets/b6617c70-c89c-4bab-9554-a682dc8ccfcb)
 
-![image](https://github.com/user-attachments/assets/1f003b7c-ed7a-4fb4-af8c-23afbfe24190)
-
-![image](https://github.com/user-attachments/assets/6f2660bd-a840-4a1e-984f-4301aaa7f542)
+From the top 10 valued player positions, 
 
 
 ## Correlation 
 
 ### Correlation Matrix
-
+![correlation matrix](https://github.com/user-attachments/assets/3e8ef0f1-7ce6-4906-8dce-8813d0611eed)
+Wage is most strongly influenced by technical and attacking attributes, with physical and defensive skills playing a secondary role. The strongest relationships are among technical attributes themselves.
 
 ### Analysing top Players by Strength
 ![radar](https://github.com/user-attachments/assets/87ebb238-3f89-4247-9ee4-64162f2416ff)
@@ -74,18 +72,11 @@ Most players cluster at the lower end of value/wage
 
 
 # Principal Component Analysis
-![image](https://github.com/user-attachments/assets/bc7936d7-5406-4669-8949-eb71e76debec)
+![output](https://github.com/user-attachments/assets/ead8f199-88b0-4069-886e-40b689bbc4b6)
+Principal component 2
 
-![image](https://github.com/user-attachments/assets/0ff31dd4-cf76-45f4-8ec9-76a64aae5c02)
-
-![image](https://github.com/user-attachments/assets/5fc27a27-de35-4d50-bb50-7c1bb8341569)
-
-
-# Clustering
-
-![image](https://github.com/user-attachments/assets/10ec0fb4-ecd7-4762-a912-b7b02d859512)
-
-![image](https://github.com/user-attachments/assets/ebbe0a7e-f2de-4523-9a1f-9a31007a927f)
+![biplot](https://github.com/user-attachments/assets/26d5c882-3fa3-4ab5-8213-9bcc11bafe6f)
+This biplot reveals that most player variation can be summarized by two main axes: one dominated by technical and value-related skills, and another by physical attributes like speed. The clustering of technical skills shows they often co-occur, while physical traits like speed can set players apart in unique ways. This kind of analysis helps identify which attributes are most influential in distinguishing player profiles in your dataset.
 
 
 # Model Training
