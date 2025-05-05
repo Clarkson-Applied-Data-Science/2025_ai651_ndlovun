@@ -115,28 +115,33 @@ Our model for this data is:
 
 ### Synthesized Prediction Example
 
-![Screenshot 2025-04-22 015746](https://github.com/user-attachments/assets/b96ceaed-aa2d-427b-8aaa-537ad2a404d8)
 
 
+# Key findings 
 
-# Future Work
--Experiment with neural networks for capturing complex interactions
+### Feature Selection & Transformation:
+We focused on top features such as ball control, dribbling, sprint speed, and reactions, alongside a cluster variable representing player categories. After transforming the target variable (wage) with a log transformation, we experimented with different models to capture the relationships between these features and wages.
 
--Include temporal evolution of player ratings from multi-year data
+### Modeling Attempts:
+We explored several machine learning models, including:
+Linear Regression: Basic but interpretable, providing a baseline for the prediction.
+Random Forest & XGBoost: Powerful tree-based models that allowed for better capture of non-linear relationships.
+Ensemble Methods (Stacking & Voting): We attempted to combine multiple models, but the results didn’t significantly outperform the best individual models. This suggests that model diversity wasn’t enough to overcome the challenges posed by the data.
 
--Source and use a verified dataset
+### Challenges:
+Model Accuracy: Despite using advanced techniques like XGBoost and stacking, the models struggled to predict wages accurately, likely due to factors such as extreme outliers and lack of feature diversity.
+Negative R²: The negative R² in many of the models indicated that the models were not performing better than a simple mean-based baseline. This emphasizes the need for further feature engineering and data refinement.
 
+### Potential Improvements:
+Feature Engineering: Including more relevant features such as age, overall rating, international reputation, and club context could improve predictions.
+Group-Specific Models: Dividing the dataset by player position or cluster might reveal more accurate patterns within specific player categories.
+Handling Outliers: Using robust loss functions or transforming the target variable more effectively could help in dealing with outliers and extreme wage values.
 
-# Conclusion
+### Next Steps:
+Future work should focus on deeper analysis of the dataset’s distribution and feature relationships. Additionally, experimenting with models tailored to specific player roles (e.g., forwards, midfielders) and incorporating new player-specific metadata would help refine the model and improve predictions.
 
--The models accurately predicted player market value with Random Forest performing best.
-
--Features such as Best Overall Rating, Overall Rating and  Potential were found to be the strongest predictors of market value.
-
--The modeling framework and feature importance analysis can be adapted for real-world scouting and valuation scenarios for soccer players.
-
-
-
+### Conclusion:
+In this project, we have successfully built machine learning models to predict football player wages, based on various attributes such as player statistics, club data, and performance metrics. XG-Boost was the favorable model because of its ability to handle non-linear relationships. Despite encountering challenges in improving model accuracy, we gained valuable insights into the nature of player wage predictions and the factors influencing them.This project demonstrates the challenges of predicting football player wages due to the complexity of the data and the high variance in wage distribution. While the models tested provide a starting point, further refinement is necessary to enhance predictive power. The insights gained here can inform future modeling efforts, with an emphasis on feature engineering and dataset segmentation.
 
 
 
