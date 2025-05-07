@@ -6,7 +6,7 @@ This project explores the use of machine learning to predict football player wag
 ## Overall Goal
 To analyze the factors that influence a soccer player's wages using FIFA 2022 data.
 
-## Objectives
+## Specific Objectives
 1. Identify attributes correlated with wage.
 2. Develop machine learning models to predict wages.
 3. Evaluate model performance and optimize hyperparameters.
