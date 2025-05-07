@@ -102,8 +102,11 @@ The biplot shows that technical and attacking skills (Dribbling, SprintSpeed, Cr
 This analysis reveals that technical skills (Dribbling) and player ratings strongly distinguish players in different ways along the principal components, with physical attributes (SprintSpeed) and market Values also playing significant roles in player differentiation.
 
 # Model Training and Evaluation
+-Since our target variable (wages) was not normally distributed, we trained the following models because they do not assume normality and they are not sensitive to scaling.
+
 ![image](https://github.com/user-attachments/assets/c6aa97ce-319b-437f-8d5b-6454189f64ba)
-Lower RMSE indicates better accuracy and higher R² indicates better explanatory power
+
+-Lower RMSE indicates better accuracy and higher R² indicates better explanatory power
 The ranking from best to worst is:
 Random Forest: RMSE = 6815.86, R² = -0.21
 XGBoost: RMSE = 7655.01, R² = -0.53
