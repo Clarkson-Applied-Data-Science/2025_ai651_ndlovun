@@ -88,30 +88,27 @@ The PCA scree plot indicates that player data is complex, with no single feature
 
 ### Biplot
 ![biplot](https://github.com/user-attachments/assets/085c1685-d33d-42c3-8a90-caa39f519609)
+
 The biplot shows that technical and attacking skills (Dribbling, SprintSpeed, Crossing) are the most important for explaining differences among players in this dataset. No single attribute dominates, and the variance is spread across several features, highlighting the complexity and multidimensionality of player performance data.
 
-### 
-Player Attribute	PC1	PC2	Total Contribution
-Best Overall Rating	0.07408	0.697478	49%
-Dribbling	0.613434	-0.078367	38%
-Crossing	0.20129	-0.518911	31%
-Values	0.545976	0.100749	31%
-SprintSpeed	0.516042	0.187035	30%
-Positioning	0.115341	-0.439297	21%
+### Quantifying Feature Contributing the highest variance
 ![image](https://github.com/user-attachments/assets/dd7743c3-8545-4cac-8a5e-5fe080a400af)
 
 This analysis reveals that technical skills (Dribbling) and player ratings strongly distinguish players in different ways along the principal components, with physical attributes (SprintSpeed) and market Values also playing significant roles in player differentiation.
 
-# Model Training
-
-
+# Model Training and Evaluation
+![image](https://github.com/user-attachments/assets/c6aa97ce-319b-437f-8d5b-6454189f64ba)
 
 
 ## Residual Plots
--We perform residual analysis to establish how well our model fits the data by analyzing the residuals as below:
-![image](https://github.com/user-attachments/assets/f1612a92-10e7-41a5-a076-66279eda7ab0)
+![image](https://github.com/user-attachments/assets/f1Point to note:
+Lower RMSE indicates better accuracy and higher R² indicates better explanatory power
+The ranking from best to worst is:
+Random Forest: RMSE = 6815.86, R² = -0.21
+XGBoost: RMSE = 7655.01, R² = -0.53
+Decision Tree: RMSE = 10745.75, R² = -2.01
+However, it's worth noting that all models have negative R² values, suggesting they perform worse than simply using the mean value as a prediction. The Random Forest model still needs improvement, but it's the best option among these three. So we perform Grid Search.
 
--We observe that Random Forest and XGBoost have the best performing models 
 
 ## Hyperparameter Selection
 -A K-Fold Cross-Validation approach (K=5) was used to ensure robust model evaluation and minimize overfitting.
