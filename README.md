@@ -17,10 +17,10 @@ This study offers a framework for objective wage valuation, aiding stakeholders 
 ## Data Source
 Source of the Data: https://www.kaggle.com/datasets/bryanb/fifa-player-stats-database?select=FIFA22_official_data.csv   
 Year: 2022
-Structure:  1000R * 11 C
+Structure: 16801 X 54
 
 ## Variables
-Train a regression model on player attributes (independent variables) to predict market value (dependent variables).
+Train a regression model on player attributes (independent variables) to predict wages (dependent variables).
 
 ### Justification of data choice and period
 While more recent data might offer some advantages, the 2022 dataset proved to provide a strong foundation for achieving the project's objectives of exploring relationships, developing predictive models, and providing actionable insights for football because of the vast attributes it contained.
