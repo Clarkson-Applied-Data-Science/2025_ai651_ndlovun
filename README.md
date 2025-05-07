@@ -3,15 +3,15 @@
 # Introduction
 This project explores the use of machine learning to predict football player wages based on player attributes and performance data. By building and evaluating predictive models, it aims to understand how well on-field statistics can explain wage differences and highlights both the potential and the challenges of using data-driven approaches for salary prediction in professional football.
 
-### Overall Goal
+## Overall Goal
 To analyze the factors that influence a soccer player's wages using FIFA 2022 data.
 
-### Objectives
+## Objectives
 1. Identify attributes correlated with wage.
 2. Develop machine learning models to predict wages.
 3. Evaluate model performance and optimize hyperparameters.
 
-### Study Significance
+## Study Significance
 This study offers a framework for objective wage valuation, aiding stakeholders in financial planning and talent assessment.
    
 ## Data Source
@@ -22,25 +22,25 @@ Structure: 16801R X 54C
 ## Variables
 Train a regression model on player attributes (independent variables) to predict wages (dependent variables).
 
-### Justification of data choice and period
+## Justification of data choice and period
 While more recent data might offer some advantages, the 2022 dataset proved to provide a strong foundation for achieving the project's objectives of exploring relationships, developing predictive models, and providing actionable insights for football because of the vast attributes it contained.
 
 
 ## Project Plan
 Data Cleaning > Data Pre-Processing > Exploratory Analysis > Feature Engineering (PCA) > Model Training and Building > Model Evaluation > Model Selection
 
-### Data Cleaning and Pre-Processing
+# Data Cleaning and Pre-Processing
 Removed columns with >50% missing values (e.g., DefensiveAwareness, GKReflexes).
 Imputed remaining missing values using mean/mode.
 Standardized numeric features 
 One-hot encoded categorical variables.
 
-### Feature Engineering
+## Feature Engineering
 Top Attributes: Positioning, Reactions, BallControl, and Values were retained based on EDA correlations.
 Log Transformation: Applied to Values and Wage to address skewness.
 
 
-### Exploratory Analysis
+## Exploratory Analysis
 
 ![age distribution](https://github.com/user-attachments/assets/0b2699dc-fdeb-427f-a0a5-7497634ce56f)
 
@@ -54,9 +54,9 @@ Subs are the most dorminant player positions.
 
 Player wages are highly variable within each position, with a small number of players earning much more than the rest. While median wages are relatively similar, attacking and goalkeeping roles show greater wage variability and more high earners. This reflects the market's premium for standout performers in these positions.
 
-## Correlation 
+# Correlation 
 
-### Correlation Matrix
+## Correlation Matrix
 ![correlation matrix](https://github.com/user-attachments/assets/7bbd4ee8-813e-4ea8-87b1-3408194a58d7)
 
 All correlations with Wage are weak and negative, ranging from about -0.12 to -0.29.
@@ -66,7 +66,7 @@ All correlations with Wage are weak and negative, ranging from about -0.12 to -0
 
 Football player wages are highly unequal, with most players earning modest amounts and a small elite group earning extremely high wages. This skewed distribution can make wage prediction challenging, as models must account for both the large number of low-wage players and the rare, high-wage outliers
 
-### Analysing top Players by Strength
+## Analysing top Players by Strength
 
 ![radar](https://github.com/user-attachments/assets/666b0429-4a5c-400f-8447-7b51fa956f70)
 -The radar chart visually highlights the strengths and weaknesses of each player based on their attributes.
