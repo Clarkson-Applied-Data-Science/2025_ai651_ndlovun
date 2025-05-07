@@ -1,7 +1,7 @@
 # Predicting EPL Soccer Player Wages Using Machine Learning Models
 
 # Introduction
-Player wage determination in soccer involves factors like performance metrics, marketability, and positional demand. This project leverages FIFA 2022 player data to build a predictive model for wages, providing insights into key attributes influencing earnings.
+This project explores the use of machine learning to predict football player wages based on player attributes and performance data. By building and evaluating predictive models, it aims to understand how well on-field statistics can explain wage differences and highlights both the potential and the challenges of using data-driven approaches for salary prediction in professional football.
 
 ### Overall Goal
 To analyze the factors that influence a soccer player's wages using FIFA 2022 data.
@@ -59,7 +59,12 @@ Player wages are highly variable within each position, with a small number of pl
 ### Correlation Matrix
 ![correlation matrix](https://github.com/user-attachments/assets/7bbd4ee8-813e-4ea8-87b1-3408194a58d7)
 
-Wage is most strongly influenced by technical and attacking attributes, with physical and defensive skills playing a secondary role. The strongest relationships are among technical attributes themselves.
+All correlations with Wage are weak and negative, ranging from about -0.12 to -0.29.
+
+## Establishing the distribution of Wages
+![wage distribution](https://github.com/user-attachments/assets/622b17e5-f5f9-4aba-b352-4bf7801530f4)
+
+Football player wages are highly unequal, with most players earning modest amounts and a small elite group earning extremely high wages. This skewed distribution can make wage prediction challenging, as models must account for both the large number of low-wage players and the rare, high-wage outliers
 
 ### Analysing top Players by Strength
 
@@ -73,7 +78,7 @@ Wage is most strongly influenced by technical and attacking attributes, with phy
 
 # Principal Component Analysis
 
-## Train/Test Split Criteria
+## Train/Test Split Criteria and Scaling
 
 -80% of the data was used for training the model
 
@@ -82,26 +87,22 @@ Wage is most strongly influenced by technical and attacking attributes, with phy
 -The dataset was divided into 80/20 train-test split using stratified sampling to maintain the distribution of the target variable (Wages). This approach ensured that the training set was large enough to learn the underlying patterns, while the test set provided an unbiased evaluation of the model’s performance.
 
 
-### Scree Plot
+## Scree Plot
 ![scree](https://github.com/user-attachments/assets/67033032-1892-4636-a37d-910e631ab671)
 The PCA scree plot indicates that player data is complex, with no single feature or component capturing most of the variance.
 
-### Biplot
+## Biplot
 ![biplot](https://github.com/user-attachments/assets/085c1685-d33d-42c3-8a90-caa39f519609)
 
 The biplot shows that technical and attacking skills (Dribbling, SprintSpeed, Crossing) are the most important for explaining differences among players in this dataset. No single attribute dominates, and the variance is spread across several features, highlighting the complexity and multidimensionality of player performance data.
 
-### Quantifying Feature Contributing the highest variance
+## Quantifying Features Contributing the highest variance
 ![image](https://github.com/user-attachments/assets/dd7743c3-8545-4cac-8a5e-5fe080a400af)
 
 This analysis reveals that technical skills (Dribbling) and player ratings strongly distinguish players in different ways along the principal components, with physical attributes (SprintSpeed) and market Values also playing significant roles in player differentiation.
 
 # Model Training and Evaluation
 ![image](https://github.com/user-attachments/assets/c6aa97ce-319b-437f-8d5b-6454189f64ba)
-
-
-## Residual Plots
-![image](https://github.com/user-attachments/assets/f1Point to note:
 Lower RMSE indicates better accuracy and higher R² indicates better explanatory power
 The ranking from best to worst is:
 Random Forest: RMSE = 6815.86, R² = -0.21
@@ -110,51 +111,51 @@ Decision Tree: RMSE = 10745.75, R² = -2.01
 However, it's worth noting that all models have negative R² values, suggesting they perform worse than simply using the mean value as a prediction. The Random Forest model still needs improvement, but it's the best option among these three. So we perform Grid Search.
 
 
-## Hyperparameter Selection
--A K-Fold Cross-Validation approach (K=5) was used to ensure robust model evaluation and minimize overfitting.
--Additionally, feature importance analysis was conducted to identify the most influential predictors of Wage and Value.
+## Hyperparameter Tuning
+-Grid Search was applied to ensure robust model evaluation and minimize overfitting.
+![image](https://github.com/user-attachments/assets/d4be9d9d-4343-4ac0-9421-92f42e9951f8)
 
-## Model Selection
--Since the MSE for Random Forest performed better, we proceeded with selecting it as our best model.
-
--We establish which variable is most important as below:
-![image](https://github.com/user-attachments/assets/0dffd696-851e-4c00-8f6d-d6cdc2eb3310)
+Improvements from hyperparameter tuning were marginal but most significantly XGBoost R² improved from -0.53 to -0.17 hence it became the best model as below:
+![model evaluation](https://github.com/user-attachments/assets/e7c4edba-f1d8-4618-8f38-251bd1861e94)
 
 
-Our model for this data is:
-![image](https://github.com/user-attachments/assets/ba340fc3-bda5-4c4c-ab1e-246b34a34c9d)
 
-### Synthesized Prediction Example
+## Evaluation on Test
+We performed residual plots to establish how well the models fit the data.
+
+![model diagnostics](https://github.com/user-attachments/assets/5d8d4586-6bbc-44ee-887e-581537c3d61e)
+Random Forest and XG-Boost showed better performance as the residuals were more random. However, we choose XG-Boost as the best model since it presented better accuracy upon hypertuning.
+
+# Feature Importance
+![feature importance-XG](https://github.com/user-attachments/assets/ee1b92a0-9067-45b2-ab0b-ec8a389f3a64)
+
+The XGBoost model considers technical skills (like ShortPassing, LongShots, Dribbling) and overall player quality (Overall) as the most important factors in predicting wages.
+
+## SHapley Additive exPlanations (SHAP)
+We performed SHAP to establish how each feature contributes to the model's prediction.
+![SHAP](https://github.com/user-attachments/assets/34e4adc7-3511-436e-8838-8133b1c8606f)
+
+While Overall and SprintSpeed are the most influential, their effects are still moderate, and most features have only a small impact. This suggests that the model finds it difficult to explain wage variation using the available player attributes, aligning with earlier findings of weak predictive power.
 
 
+## Model Deployment?
+While XGBoost is the least poor model, none are viable for deployment. The project should pivot to address data gaps and nonlinear wage determinants rather than incremental tuning.
+
+# Future Work
+Future work should focus on expanding the feature set to include off-field and market-related variables, such as club finances, player marketability, and contract details, which are likely to have a stronger influence on wages. Developing position-specific or league-specific models may also improve predictive accuracy so we could consider cluster based models. Additionally, advanced modeling techniques and robust handling of wage outliers could help address the highly skewed wage distribution and improve model reliability. Most importantly, we could use a more verified data source that is not Kaggle.
 
 # Key findings 
 
-### Feature Selection & Transformation:
-We focused on top features such as ball control, dribbling, sprint speed, and reactions, alongside a cluster variable representing player categories. After transforming the target variable (wage) with a log transformation, we experimented with different models to capture the relationships between these features and wages.
+## Challenges:
+Weak correlation of player features with wages meant gave our model a low predicitive power. Also, the negative R² in the trained models indicated that the models were not performing better than a simple mean-based baseline. This emphasizes the need for further feature engineering and data refinement.
 
-### Modeling Attempts:
-We explored several machine learning models, including:
-Linear Regression: Basic but interpretable, providing a baseline for the prediction.
-Random Forest & XGBoost: Powerful tree-based models that allowed for better capture of non-linear relationships.
-Ensemble Methods (Stacking & Voting): We attempted to combine multiple models, but the results didn’t significantly outperform the best individual models. This suggests that model diversity wasn’t enough to overcome the challenges posed by the data.
-
-### Challenges:
-Model Accuracy: Despite using advanced techniques like XGBoost and stacking, the models struggled to predict wages accurately, likely due to factors such as extreme outliers and lack of feature diversity.
-Negative R²: The negative R² in many of the models indicated that the models were not performing better than a simple mean-based baseline. This emphasizes the need for further feature engineering and data refinement.
-
-### Potential Improvements:
+## Potential Improvements:
 Feature Engineering: Including more relevant features such as age, overall rating, international reputation, and club context could improve predictions.
-Group-Specific Models: Dividing the dataset by player position or cluster might reveal more accurate patterns within specific player categories.
+Cluster-Specific Models: Dividing the dataset by player position or league might reveal more accurate patterns within specific player categories.
 Handling Outliers: Using robust loss functions or transforming the target variable more effectively could help in dealing with outliers and extreme wage values.
 
-### Next Steps:
-Future work should focus on deeper analysis of the dataset’s distribution and feature relationships. Additionally, experimenting with models tailored to specific player roles (e.g., forwards, midfielders) and incorporating new player-specific metadata would help refine the model and improve predictions.
-
-### Conclusion:
-In this project, we have successfully built machine learning models to predict football player wages, based on various attributes such as player statistics, club data, and performance metrics. XG-Boost was the favorable model because of its ability to handle non-linear relationships. Despite encountering challenges in improving model accuracy, we gained valuable insights into the nature of player wage predictions and the factors influencing them.This project demonstrates the challenges of predicting football player wages due to the complexity of the data and the high variance in wage distribution. While the models tested provide a starting point, further refinement is necessary to enhance predictive power. The insights gained here can inform future modeling efforts, with an emphasis on feature engineering and dataset segmentation.
-
-
+## Conclusion:
+Although we successfully established the XGBoost as the best model, its low predictive power demonstrates that predicting football player wages using only standard player attributes and performance metrics is highly challenging. The analysis revealed that these features have weak correlations with wages, and even advanced machine learning models like XGBoost and Random Forest failed to achieve meaningful predictive accuracy, as shown by negative R² values. The SHAP analysis further confirmed that no single attribute strongly influences wage predictions, highlighting the complexity and multifactorial nature of wage determination in professional football. To build more accurate wage prediction models, it is essential to incorporate additional data such as market factors, club finances, contract details, and player marketability. Overall, the project underscores the limitations of relying solely on on-field statistics for wage prediction and points toward the need for richer, more comprehensive datasets and modeling approaches. Future work will enhance the model performance by addressing the challenges that were presented by this model
 
 
 
