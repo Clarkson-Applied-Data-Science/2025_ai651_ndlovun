@@ -57,12 +57,13 @@ Player wages are highly variable within each position, with a small number of pl
 ## Correlation 
 
 ### Correlation Matrix
-![correlation matrix](https://github.com/user-attachments/assets/3e8ef0f1-7ce6-4906-8dce-8813d0611eed)
+![correlation matrix](https://github.com/user-attachments/assets/7bbd4ee8-813e-4ea8-87b1-3408194a58d7)
+
 Wage is most strongly influenced by technical and attacking attributes, with physical and defensive skills playing a secondary role. The strongest relationships are among technical attributes themselves.
 
 ### Analysing top Players by Strength
-![radar](https://github.com/user-attachments/assets/87ebb238-3f89-4247-9ee4-64162f2416ff)
 
+![radar](https://github.com/user-attachments/assets/666b0429-4a5c-400f-8447-7b51fa956f70)
 -The radar chart visually highlights the strengths and weaknesses of each player based on their attributes.
 -Messi and Neymar Jr dominate in technical skills (Dribbling, Finishing, Agility).
 -Lewandowski is the strongest physically, making him an ideal target striker.
@@ -71,14 +72,6 @@ Wage is most strongly influenced by technical and attacking attributes, with phy
 
 
 # Principal Component Analysis
-![output](https://github.com/user-attachments/assets/ead8f199-88b0-4069-886e-40b689bbc4b6)
-The scree plot justifies focusing on the first two principal components for interpretation and further modeling, as they capture the vast majority of the variance in your soccer player attributes dataset
-
-![biplot](https://github.com/user-attachments/assets/26d5c882-3fa3-4ab5-8213-9bcc11bafe6f)
-This biplot reveals that most player variation can be summarized by two main axes: one dominated by technical and value-related skills, and another by physical attributes like speed. The clustering of technical skills shows they often co-occur, while physical traits like speed can set players apart in unique ways. This kind of analysis helps identify which attributes are most influential in distinguishing player profiles in your dataset.
-
-
-# Model Training
 
 ## Train/Test Split Criteria
 
@@ -86,11 +79,32 @@ This biplot reveals that most player variation can be summarized by two main axe
 
 -20% of the data was used for testing the model
 
--The dataset was divided into 80/20 train-test split using stratified sampling to maintain the distribution of the target variable (Value). This approach ensured that the training set was large enough to learn the underlying patterns, while the test set provided an unbiased evaluation of the model’s performance.
+-The dataset was divided into 80/20 train-test split using stratified sampling to maintain the distribution of the target variable (Wages). This approach ensured that the training set was large enough to learn the underlying patterns, while the test set provided an unbiased evaluation of the model’s performance.
 
 
-![image](https://github.com/user-attachments/assets/95cdf421-44a2-4533-9ee9-561c5ff47288)
-SVM perfomed best upon initial evaluation
+### Scree Plot
+![scree](https://github.com/user-attachments/assets/67033032-1892-4636-a37d-910e631ab671)
+The PCA scree plot indicates that player data is complex, with no single feature or component capturing most of the variance.
+
+### Biplot
+![biplot](https://github.com/user-attachments/assets/085c1685-d33d-42c3-8a90-caa39f519609)
+The biplot shows that technical and attacking skills (Dribbling, SprintSpeed, Crossing) are the most important for explaining differences among players in this dataset. No single attribute dominates, and the variance is spread across several features, highlighting the complexity and multidimensionality of player performance data.
+
+### 
+Player Attribute	PC1	PC2	Total Contribution
+Best Overall Rating	0.07408	0.697478	49%
+Dribbling	0.613434	-0.078367	38%
+Crossing	0.20129	-0.518911	31%
+Values	0.545976	0.100749	31%
+SprintSpeed	0.516042	0.187035	30%
+Positioning	0.115341	-0.439297	21%
+![image](https://github.com/user-attachments/assets/dd7743c3-8545-4cac-8a5e-5fe080a400af)
+
+This analysis reveals that technical skills (Dribbling) and player ratings strongly distinguish players in different ways along the principal components, with physical attributes (SprintSpeed) and market Values also playing significant roles in player differentiation.
+
+# Model Training
+
+
 
 
 ## Residual Plots
