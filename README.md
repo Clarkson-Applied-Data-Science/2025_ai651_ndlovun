@@ -59,7 +59,7 @@ Player wages are highly variable within each position, with a small number of pl
 ## Correlation Matrix
 ![correlation matrix](https://github.com/user-attachments/assets/7bbd4ee8-813e-4ea8-87b1-3408194a58d7)
 
-All correlations with Wage are weak and negative, ranging from about -0.12 to -0.29.
+All correlations with Wage are weak and negative, ranging from about -0.12 to -0.29 indicating weak relationship with wages.
 
 ## Establishing the distribution of Wages
 ![wage distribution](https://github.com/user-attachments/assets/622b17e5-f5f9-4aba-b352-4bf7801530f4)
